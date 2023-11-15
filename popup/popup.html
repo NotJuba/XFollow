@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="popup.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Twitter Auto follow Bot</h1>
+
+    <div class="select">
+        <select name="format" id="format">
+            <option id="op1" value="verified" selected>Verified Followers</option>
+            <option id="op2" value="know">Followers you know</option>
+            <option id="op3" value="followers">Followers</option>
+            <option id="op4" value="following">Following</option>
+            <option id="op5" value="sub">Subscriptions</option>
+        </select>
+    </div>
+
+    <div class="data">
+        <div id="input1">
+            <label for="in1" >Speed in seconds</label>
+            <input id="in1"  type="number" min="1" max="100" placeholder="Speed s">
+        </div>
+        <div id="input2">
+            <label for="in2" id="lb2" >Numbers of followers </label>
+            <input id="in2" type="number" min="1" max="100" placeholder="Numbers">
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button id="btnStart"> Start</button>
+        <button id="btnStop"> Stop</button>
+    </div>
+
+    <script src="popup.js"></script>
+    
+</body>
+</html>

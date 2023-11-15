@@ -1,0 +1,127 @@
+* {
+  margin: 20px;
+}
+
+body { 
+    width : 400px;
+    background-color : #27272e;
+    background: radial-gradient(circle, rgba(51,64,130,1) 0%, rgba(18,11,12,1) 100%); 
+}
+
+h1 {
+    color : #dfdfdf;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2); /* Black with 50% opacity */
+    margin-bottom: 30px;
+}
+
+.select {
+  margin-bottom: -20px;
+}
+
+select{
+  background-color: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgb(53, 26, 26) 0%, rgba(167, 173, 174, 1) 49%, rgb(67, 26, 26) 100%);
+  border-radius: 15px;
+  width: 90%;
+  height: 40px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+#op1, #op2,#op3,#op4,#op5 {
+  background-color: #202040;
+  color : white;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+#input1, #input2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: -30px;
+}
+
+label {
+  color : rgb(218, 205, 205);
+  padding: 10px;
+  height: 28px;
+  border-radius: 15px;
+  font-size: large;
+  margin-bottom: -20px;
+  margin-left: 30px;
+  white-space: nowrap;
+}
+
+#lb2 {
+  margin-left: -1px;
+}
+#in1 , #in2{
+  padding: 5px 10px;
+  width: 140px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: large;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(171, 170, 170, 1) 71%);
+  justify-content: space-between;
+  margin: 10px;
+}
+
+#in1 {
+  margin-left: 40px;
+}
+
+.buttons{
+  display: flex;
+  margin-bottom: 30px;
+  width: 100;
+  justify-content: space-between;
+}
+
+#btnStart, #btnStop{
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background : linear-gradient(235deg, #2ecc71, #821515);
+  color: #ffffff;
+  width : 170px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 15px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  justify-content: space-between;
+  margin: 10px; /* Adjust margin as needed */
+  background : linear-gradient(360deg, #1b1b1b,rgb(67, 26, 26));
+
+}
+
+
+#btnStart{
+  filter: drop-shadow(0 0 0.70rem red);
+}
+
+#btnStop{
+  filter: drop-shadow(0 0 0.30rem blue)
+}
+
+
+body {
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
