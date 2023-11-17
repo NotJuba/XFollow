@@ -16,4 +16,3 @@ document.getElementById('btnStart').addEventListener('click', function() {
 document.getElementById('btnStop').addEventListener('click', function() {
    chrome.runtime.sendMessage({ action: 'stop' });
 });
-

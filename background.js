@@ -21,7 +21,6 @@ function getTabId(callback) {
 
 
 
-
 function addProfiles(tabId, numbers ,speed) {
   chrome.scripting.executeScript({
       target: { tabId: tabId },
@@ -29,7 +28,8 @@ function addProfiles(tabId, numbers ,speed) {
         let i = 1; // Initialize button index counter
         let interval = setInterval(function() { // Set interval for button clicks
 
-        let followXpath= `/html/body/div[3]/div/div[2]/div/main/div/div/div[2]/div/div[${i}]/div/div/div/div[2]/div/div/span[1]/button`
+        let followXpath = `/html/body/div[1]/div/div/div[2]/main/div/div/div/div[1]/div/section/div/div/div[${i}]/div/div/div/div/div[2]/div[1]/div[2]/div/div/span`
+
         let followButton = document.evaluate(followXpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
           if (followButton && followButton.innerText === "Follow") {
@@ -53,23 +53,44 @@ function addProfiles(tabId, numbers ,speed) {
 
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  var action = msg.action;
   var format = msg.format;
   var speed = msg.speed;
   var numbers = msg.numbers;
 
-  if (msg.format=== "follow") {
-      getTabId((tabId) => {
-          addProfiles(tabId, msg.numbers , msg.speed); 
-  })} else if (msg.format==="add"){
-    console.log("ok it kinda woked")
-    chrome.notifications.create({
-    type: 'basic',
-    iconUrl: 'photo.png',
-    title: 'Yoo bro',
-    message : 'You need to pay the full vesion to use this'
-  });
-}
+  if (msg.action=== 'start' ) {
+    if (msg.format=== "follow") {
+        getTabId((tabId) => {
+            addProfiles(tabId, msg.numbers , msg.speed); 
+    })} else if (msg.format==="like"){
+      console.log("ok it kinda woked")
+      chrome.notifications.create({
+      type: 'basic',
+      iconUrl: 'photo.png',
+      title: 'Sorry bro',
+      message : 'Like feature is not ready yet'
 
+    })} else if (msg.format==="comment") {
+      chrome.notifications.create({
+      type: 'basic',
+      iconUrl: 'photo.png',
+      title: 'Sorry bro',
+      message : 'Comment feature is not ready yet'
+    
+    })} else if (msg.format==="message") {
+      chrome.notifications.create({
+      type: 'basic',
+      iconUrl: 'photo.png',
+      title: 'Sorry bro',
+      message : 'Message feature is not ready yet'
 
-});
+      })}
+    } else if (msg.action === "stop") { 
+      console.log("youre's stying to stop  it aren't you");
+      refreshActiveTab();
+    isRunning = false;
+    } 
+
+    }
+);
 
